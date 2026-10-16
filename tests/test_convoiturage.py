@@ -6,7 +6,7 @@ def test_creation_d_un_trojet(db):
         conducteur = "Rahma",
         ville_depart = "Sokode",
         ville_arrivee = "Lome",
-        date_ville = "2026-10-17",
+        date_depart = "2026-10-17",
         heure_depart = "18:00",
         places = 4,
         prix_place =3000,
