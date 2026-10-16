@@ -1,5 +1,6 @@
 from covoiturage.models import Trajet
 import pytest
+from covoiturage.models import Reservation
 
 
 def test_creation_d_un_trojet(db):
@@ -31,21 +32,35 @@ def test_trajet_avec_0_place(db):
             date_depart='2026-12-12',
             places=0,
             prix_place = 7900
-            
             )
-def test_afficher_un_trajet():
+        
+def test_afficher_un_trajet(db):
             trajet2 = Trajet.object.create(
+                conducteur = 'kadidja',
                 ville_depart ='sokode',
                 ville_arrive = 'lome',
                 date_depart='2026-11-14',
-                heure_depart = "07:00",   
+                heure_depart = "07:00", 
+                places = 4,
+                prix_place =3000,
+
             )
+            assert str(trajet2)== "sokode -> lome, le 2026-11-14 a 07:00"
 
 def test_reservation_sur_traject(db):
                  trajet3 = Trajet.object.create(
                      conducteur = "godwin",
-                     places = 2 
+                     ville_depart ='cinkassi',
+                     ville_arrive = 'lome',
+                     places = 2 ,
+                     prix_place =3000,
                  )
+                 Reservation.objects.create(
+                        nom_passager = "kossi",
+                        places = 2,
+                        traject = trajet3
+                 )
+                 assert str(trajet3) == "kossi : 2 places"
 
 
 # def test_passager_deux_fois_meme_test(db):
