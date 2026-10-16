@@ -29,7 +29,7 @@ def test_trajet_avec_0_place(db):
             ville_depart ='sokode',
             ville_arrive = 'dapaong',
             date_depart='2026-12-12',
-            places='0',
+            places=0,
             prix_place = 7900
             
             )
