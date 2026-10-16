@@ -16,7 +16,7 @@ def test_creation_d_un_trojet(db):
     assert trajet.conducteur
     assert trajet.ville_depart
     assert trajet.ville_arrivee
-    assert trajet.date_ville
+    assert trajet.date_depart
     assert trajet.heure_depart
     assert trajet.places
     assert trajet.prix_place
