@@ -25,7 +25,7 @@ def test_creation_d_un_trojet(db):
 
 def test_trajet_avec_0_place(db):
     with pytest.raises(Exception):
-        trajet1 = Trajet.object.create(
+        trajet1 = Trajet.objects.create(
             conducteur = 'abass',
             ville_depart ='sokode',
             ville_arrive = 'dapaong',
@@ -35,7 +35,7 @@ def test_trajet_avec_0_place(db):
             )
         
 def test_afficher_un_trajet(db):
-            trajet2 = Trajet.object.create(
+            trajet2 = Trajet.objects.create(
                 conducteur = 'kadidja',
                 ville_depart ='sokode',
                 ville_arrive = 'lome',
@@ -48,7 +48,7 @@ def test_afficher_un_trajet(db):
             assert str(trajet2)== "sokode -> lome, le 2026-11-14 a 07:00"
 
 def test_reservation_sur_traject(db):
-                 trajet3 = Trajet.object.create(
+                 trajet3 = Trajet.objects.create(
                      conducteur = "godwin",
                      ville_depart ='cinkassi',
                      ville_arrive = 'lome',
@@ -64,6 +64,11 @@ def test_reservation_sur_traject(db):
 
 
 # def test_passager_deux_fois_meme_test(db):
-#          trajet1 = Trajet.objects.create(conducteur="Rahma", ville_depart="Sokode", places=4, prix_place=3000)
+#          trajet4 = Trajet.objects.create(
+#                  conducteur="Rahma", 
+#                  ville_depart="Sokode", 
+#                  places=4, 
+#                  prix_place=3000
+#                  )
         
 
