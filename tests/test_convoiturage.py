@@ -28,7 +28,7 @@ def test_trajet_avec_0_place(db):
         trajet1 = Trajet.objects.create(
             conducteur = 'abass',
             ville_depart ='sokode',
-            ville_arrive = 'dapaong',
+            ville_arrivee = 'dapaong',
             date_depart='2026-12-12',
             places=0,
             prix_place = 7900
@@ -38,7 +38,7 @@ def test_afficher_un_trajet(db):
             trajet2 = Trajet.objects.create(
                 conducteur = 'kadidja',
                 ville_depart ='sokode',
-                ville_arrive = 'lome',
+                ville_arrivee = 'lome',
                 date_depart='2026-11-14',
                 heure_depart = "07:00", 
                 places = 4,
@@ -51,14 +51,14 @@ def test_reservation_sur_traject(db):
                  trajet3 = Trajet.objects.create(
                      conducteur = "godwin",
                      ville_depart ='cinkassi',
-                     ville_arrive = 'lome',
+                     ville_arrivee = 'lome',
                      places = 2 ,
                      prix_place =3000,
                  )
                  Reservation.objects.create(
                         nom_passager = "kossi",
                         places = 2,
-                        traject = trajet3
+                        trajet = trajet3
                  )
                  assert str(trajet3) == "kossi : 2 places"
 
@@ -70,5 +70,9 @@ def test_reservation_sur_traject(db):
 #                  places=4, 
 #                  prix_place=3000
 #                  )
-        
+#         Reservation.objects.create(
+#                 nom_passager = "rahma",
+#                 places = 1,
+#                 traject = trajet4
+#                 )
 
