@@ -33,7 +33,22 @@ def test_trajet_avec_0_place(db):
             prix_place = 7900
             
             )
+def test_afficher_un_trajet():
+            trajet2 = Trajet.object.create(
+                ville_depart ='sokode',
+                ville_arrive = 'lome',
+                date_depart='2026-11-14',
+                heure_depart = "07:00",   
+            )
+
+def test_reservation_sur_traject(db):
+                 trajet3 = Trajet.object.create(
+                     conducteur = "godwin",
+                     places = 2 
+                 )
+
+
+# def test_passager_deux_fois_meme_test(db):
+#          trajet1 = Trajet.objects.create(conducteur="Rahma", ville_depart="Sokode", places=4, prix_place=3000)
         
-
-
 
