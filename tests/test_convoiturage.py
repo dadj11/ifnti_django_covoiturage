@@ -44,7 +44,7 @@ def test_affichage_format_un_trajet(db):
         ville_depart="Sokodé",
         ville_arrivee="Lomé",
         date_depart="2026-11-14",
-        heure_depart="07:00",
+        heure_depart="07:00:00",
         places=3,
         prix_place=3000
     )
