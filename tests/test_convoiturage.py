@@ -51,6 +51,18 @@ def test_affichage_format_un_trajet(db):
     assert str(trajet) == "Sokodé -> Lomé, le 2026-11-14 à 07:00:00"
 
 
+@pytest.fixture
+def trajet_test():
+    return Trajet.objects.create(
+        conducteur="Koffi",
+        ville_depart="Sokodé",
+        ville_arrivee="Lomé",
+        date_depart="2026-11-14",
+        heure_depart="07:00:00",
+        places=3,
+        prix_place=3000
+    )
+
 def test_affichage_format_reservation(trajet_test):
     reservation = Reservation.objects.create(
         trajet=trajet_test,
@@ -69,8 +81,21 @@ def test_un_passager_ne_reserve_pas_deux_fois_le_meme_trajet(trajet_test):
 
 
 
+@pytest.fixture
+def autre_trajet_test():
+    return Trajet.objects.create(
+        conducteur="Awa",
+        ville_depart="Atakpamé",
+        ville_arrivee="Kpalimé",
+        date_depart="2026-12-01",
+        heure_depart="09:00:00",
+        places=2,
+        prix_place=2500
+    )
+
 
 def test_un_passager_peut_reserver_plusieurs_trajets_differents(trajet_test, autre_trajet_test):
+
 
     res1 = Reservation.objects.create(trajet=trajet_test, nom_passager="Kossi", places=1)
     res2 = Reservation.objects.create(trajet=autre_trajet_test, nom_passager="Kossi", places=2)
