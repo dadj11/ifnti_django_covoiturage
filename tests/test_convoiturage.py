@@ -48,7 +48,7 @@ def test_affichage_format_un_trajet(db):
         places=3,
         prix_place=3000.00
     )
-    assert str(trajet) == "Sokodé -> Lomé, le 14/11/2026 à 07:00"
+    assert str(trajet) == "Sokodé -> Lomé, le 2026-11-14 à 07:00:00"
 
 
 def test_affichage_format_reservation(trajet_test):
