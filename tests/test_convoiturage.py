@@ -52,7 +52,7 @@ def test_affichage_format_un_trajet(db):
 
 
 @pytest.fixture
-def trajet_test():
+def trajet_test(db):
     return Trajet.objects.create(
         conducteur="Koffi",
         ville_depart="Sokodé",
@@ -82,7 +82,7 @@ def test_un_passager_ne_reserve_pas_deux_fois_le_meme_trajet(trajet_test):
 
 
 @pytest.fixture
-def autre_trajet_test():
+def autre_trajet_test(db):
     return Trajet.objects.create(
         conducteur="Awa",
         ville_depart="Atakpamé",
